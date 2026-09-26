@@ -37,15 +37,7 @@
               </select>
             </label>
 
-            <label class="field">
-              <span>{{ t('contact.form.budget') }}</span>
-              <select v-model="form.budget">
-                <option value="">{{ t('contact.form.budgetPlaceholder') }}</option>
-                <option v-for="option in budgets" :key="option" :value="option">{{ option }}</option>
-              </select>
-            </label>
-
-            <label class="field">
+            <label class="field field-deadline">
               <span>{{ t('contact.form.deadline') }}</span>
               <input
                 v-model.trim="form.deadline"
@@ -128,12 +120,10 @@ import vueIcon from '../assets/icons/vuedotjs.svg?raw'
 
 const year = new Date().getFullYear()
 const projectTypes = t('contact.form.projectTypes')
-const budgets = t('contact.form.budgets')
 
 const form = reactive({
   name: '',
   projectType: '',
-  budget: '',
   deadline: '',
   details: '',
 })
@@ -143,7 +133,6 @@ const telegramMessage = computed(() => [
   '',
   `${t('contact.form.name')}: ${form.name}`,
   `${t('contact.form.projectType')}: ${form.projectType}`,
-  `${t('contact.form.budget')}: ${form.budget || t('contact.form.notSpecified')}`,
   `${t('contact.form.deadline')}: ${form.deadline || t('contact.form.notSpecified')}`,
   '',
   `${t('contact.form.details')}:`,
@@ -254,6 +243,10 @@ const telegramMessage = computed(() => [
 
 .field-wide {
   margin-top: 20px;
+}
+
+.field-deadline {
+  grid-column: 1 / -1;
 }
 
 .form-submit-row {

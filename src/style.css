@@ -5,16 +5,19 @@
 }
 
 :root {
-  --bg: #0a0a0f;
-  --bg-card: #111118;
-  --bg-card-hover: #16161f;
-  --border: #1e1e2e;
-  --accent: #7c6af7;
-  --accent-dim: rgba(124, 106, 247, 0.15);
-  --text: #e2e2f0;
-  --text-muted: #6e6e8a;
-  --text-dim: #3a3a5c;
-  --mono: 'JetBrains Mono', monospace;
+  --bg: #090a0d;
+  --bg-card: #11131a;
+  --bg-card-hover: #171a23;
+  --border: #222632;
+  --border-strong: #343a4a;
+  --accent: #765df4;
+  --accent-dim: rgba(118, 93, 244, 0.16);
+  --signal: #6bcbff;
+  --text: #f0f1f5;
+  --text-muted: #898fa3;
+  --text-dim: #4f5567;
+  --display: 'Manrope', sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
 }
 
 html {
@@ -24,10 +27,14 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+  background-size: 72px 72px;
 }
 
 ::-webkit-scrollbar {
@@ -47,27 +54,42 @@ a {
 }
 
 .container {
-  max-width: 960px;
+  width: min(100%, 1200px);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(20px, 4vw, 42px);
 }
 
 .section {
-  padding: 96px 0;
+  padding: clamp(84px, 10vw, 132px) 0;
+  scroll-margin-top: 76px;
 }
 
 .section-label {
   font-family: var(--mono);
-  font-size: 12px;
-  color: var(--accent);
-  letter-spacing: 0.12em;
+  font-size: 10px;
+  color: var(--signal);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .section-title {
-  font-size: 32px;
-  font-weight: 700;
+  font-family: var(--display);
+  font-size: clamp(32px, 4.2vw, 52px);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
   margin-bottom: 48px;
   color: var(--text);
+}
+
+::selection {
+  background: var(--signal);
+  color: #071017;
+}
+
+@media (max-width: 560px) {
+  body {
+    background-size: 44px 44px;
+  }
 }

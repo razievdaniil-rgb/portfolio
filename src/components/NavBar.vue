@@ -1,13 +1,16 @@
 <template>
   <nav class="nav" :class="{ scrolled }">
     <div class="container nav-inner">
-      <span class="nav-logo">dr<span class="accent">.</span></span>
+      <a href="#" class="nav-logo" aria-label="Daniil Raziev">
+        <span>D/R</span>
+        <small>product developer</small>
+      </a>
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="#about">{{ t('nav.about') }}</a></li>
           <li v-if="locale === 'en'"><a href="#services">{{ t('nav.services') }}</a></li>
           <li><a href="#projects">{{ t('nav.projects') }}</a></li>
-          <li><a href="#contact">{{ t('nav.contact') }}</a></li>
+          <li><a href="#contact" class="nav-cta">{{ t('nav.contact') }}</a></li>
         </ul>
         <div class="lang-switch">
           <a :href="ruHref" :class="{ active: locale === 'ru' }">RU</a>
@@ -43,14 +46,14 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 20px 0;
+  padding: 18px 0;
   transition: background 0.3s, border-color 0.3s, padding 0.3s;
   border-bottom: 1px solid transparent;
 }
 
 .nav.scrolled {
-  background: rgba(10, 10, 15, 0.85);
-  backdrop-filter: blur(12px);
+  background: rgba(9, 10, 13, 0.82);
+  backdrop-filter: blur(18px);
   border-color: var(--border);
   padding: 14px 0;
 }
@@ -62,14 +65,27 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 }
 
 .nav-logo {
-  font-family: var(--mono);
-  font-size: 18px;
-  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 11px;
   color: var(--text);
 }
 
-.accent {
-  color: var(--accent);
+.nav-logo > span {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.08em;
+}
+
+.nav-logo small {
+  padding-left: 11px;
+  border-left: 1px solid var(--border-strong);
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .nav-right {
@@ -86,9 +102,20 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 }
 
 .nav-links a {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--text-muted);
   transition: color 0.2s;
+}
+
+.nav-links .nav-cta {
+  padding: 8px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: 7px;
+  color: var(--text);
+}
+
+.nav-links .nav-cta:hover {
+  border-color: var(--signal);
 }
 
 .nav-links a:hover {
@@ -122,12 +149,17 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 }
 
 @media (max-width: 640px) {
+  .nav-logo small,
+  .nav-links li:first-child {
+    display: none;
+  }
+
   .nav-right {
-    gap: 16px;
+    gap: 12px;
   }
 
   .nav-links {
-    gap: 16px;
+    gap: 10px;
   }
 
   .nav-links a {
