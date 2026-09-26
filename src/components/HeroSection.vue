@@ -3,7 +3,6 @@
     <div class="container">
       <div class="hero-status">
         <p><span class="status-dot" />{{ t('hero.kicker') }}</p>
-        <span class="status-place">{{ t('hero.metaWork') }}</span>
       </div>
 
       <div class="hero-grid">
@@ -99,7 +98,7 @@ const shotSrc = shot => import.meta.env.BASE_URL + 'shots/' + shot
 .hero-stack span { color:var(--accent); font-weight:700; }
 .hero-stack p { color:var(--text-muted); }
 @media(max-width:980px){.hero-grid{grid-template-columns:1fr}.hero-copy{max-width:820px}.hero-proof{width:min(100%,700px)}}
-@media(max-width:620px){.hero{padding-top:100px}.status-place{display:none}.hero-title{font-size:clamp(49px,15vw,72px)}.hero-bottom{grid-template-columns:1fr}.hero-actions{grid-template-columns:1fr 1fr}.btn-primary{min-width:0}.proof-window img{height:235px}.proof-row{grid-template-columns:1fr}.hero-stack{align-items:flex-start;flex-direction:column;gap:7px}.proof-main{box-shadow:7px 7px 0 var(--accent)}}
+@media(max-width:620px){.hero{padding-top:100px}.hero-title{font-size:clamp(49px,15vw,72px)}.hero-bottom{grid-template-columns:1fr}.hero-actions{grid-template-columns:1fr 1fr}.btn-primary{min-width:0}.proof-window img{height:235px}.proof-row{grid-template-columns:1fr}.hero-stack{align-items:flex-start;flex-direction:column;gap:7px}.proof-main{box-shadow:7px 7px 0 var(--accent)}}
 @media(max-width:420px){.hero-actions{grid-template-columns:1fr}.hero-title span{margin-left:-4px}.proof-caption{padding:18px}}
 @media(prefers-reduced-motion:reduce){.proof-main,.proof-mini,.btn-primary,.btn-ghost{transition:none}}
 </style>
