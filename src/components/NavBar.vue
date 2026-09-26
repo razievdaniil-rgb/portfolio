@@ -2,8 +2,8 @@
   <nav class="nav" :class="{ scrolled }">
     <div class="container nav-inner">
       <a href="#" class="nav-logo" aria-label="Daniil Raziev">
-        <span>D/R</span>
-        <small>product developer</small>
+        <span>DR.</span>
+        <small>digital product developer</small>
       </a>
       <div class="nav-right">
         <ul class="nav-links">
@@ -46,14 +46,14 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 18px 0;
+  padding: 20px 0;
   transition: background 0.3s, border-color 0.3s, padding 0.3s;
   border-bottom: 1px solid transparent;
 }
 
 .nav.scrolled {
-  background: rgba(9, 10, 13, 0.82);
-  backdrop-filter: blur(18px);
+  background: rgba(241, 243, 246, 0.88);
+  backdrop-filter: blur(20px) saturate(150%);
   border-color: var(--border);
   padding: 14px 0;
 }
@@ -72,15 +72,16 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 }
 
 .nav-logo > span {
-  font-family: var(--mono);
-  font-size: 15px;
-  font-weight: 500;
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 900;
   letter-spacing: -0.08em;
+  color: var(--accent);
 }
 
 .nav-logo small {
   padding-left: 11px;
-  border-left: 1px solid var(--border-strong);
+  border-left: 1px solid var(--border);
   color: var(--text-dim);
   font-family: var(--mono);
   font-size: 8px;
@@ -102,20 +103,23 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 }
 
 .nav-links a {
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 600;
   color: var(--text-muted);
   transition: color 0.2s;
 }
 
 .nav-links .nav-cta {
-  padding: 8px 12px;
-  border: 1px solid var(--border-strong);
-  border-radius: 7px;
-  color: var(--text);
+  padding: 10px 14px;
+  border: 1px solid var(--text);
+  border-radius: 999px;
+  background: var(--text);
+  color: #fff;
 }
 
 .nav-links .nav-cta:hover {
-  border-color: var(--signal);
+  border-color: var(--accent);
+  background: var(--accent);
 }
 
 .nav-links a:hover {
@@ -142,6 +146,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 .lang-switch a.active {
   color: var(--accent);
+  font-weight: 700;
 }
 
 .lang-sep {

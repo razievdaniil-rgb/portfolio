@@ -172,9 +172,9 @@ onUnmounted(() => {
   overflow: hidden;
   margin-bottom: 20px;
   background: var(--bg-card);
-  border: 1px solid rgba(124, 106, 247, 0.45);
-  border-radius: 18px;
-  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.24);
+  border: 1px solid var(--text);
+  border-radius: 28px;
+  box-shadow: 10px 10px 0 var(--accent);
 }
 
 .featured-visual,
@@ -191,7 +191,7 @@ onUnmounted(() => {
 
 .featured-visual {
   min-height: 470px;
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--text);
 }
 
 .featured-visual img {
@@ -213,8 +213,8 @@ onUnmounted(() => {
   padding: 8px 12px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 999px;
-  background: rgba(10, 10, 15, 0.82);
-  color: var(--text);
+  background: rgba(16, 19, 26, 0.86);
+  color: #fff;
   font-family: var(--mono);
   font-size: 11px;
   backdrop-filter: blur(12px);
@@ -291,8 +291,8 @@ onUnmounted(() => {
   gap: 18px;
   width: 100%;
   padding: 13px 16px;
-  border-radius: 8px;
-  background: var(--accent);
+  border-radius: 999px;
+  background: var(--text);
   color: #fff;
   font-size: 13px;
   font-weight: 600;
@@ -317,13 +317,14 @@ onUnmounted(() => {
   overflow: hidden;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  border-radius: 22px;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow .2s ease;
 }
 
 .project-card:hover {
-  border-color: rgba(124, 106, 247, 0.52);
+  border-color: var(--text);
   transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(36, 48, 73, .1);
 }
 
 .card-preview {
@@ -352,9 +353,9 @@ onUnmounted(() => {
   overflow: hidden;
   border-bottom: 1px solid var(--border);
   background:
-    linear-gradient(135deg, rgba(124, 106, 247, 0.2), transparent 54%),
-    repeating-linear-gradient(90deg, transparent 0 39px, rgba(255, 255, 255, 0.025) 40px);
-  color: rgba(226, 226, 240, 0.38);
+    linear-gradient(135deg, rgba(23, 92, 255, 0.18), transparent 54%),
+    repeating-linear-gradient(90deg, transparent 0 39px, rgba(16, 19, 26, 0.045) 40px);
+  color: rgba(16, 19, 26, 0.28);
   font-family: var(--mono);
   font-size: 34px;
   font-weight: 700;
@@ -427,15 +428,15 @@ onUnmounted(() => {
 }
 
 .badge.live {
-  border-color: rgba(52, 211, 153, 0.28);
-  background: rgba(52, 211, 153, 0.1);
-  color: #6ee7b7;
+  border-color: rgba(15, 142, 79, 0.28);
+  background: rgba(15, 142, 79, 0.1);
+  color: #08723e;
 }
 
 .badge.concept {
-  border-color: rgba(124, 106, 247, 0.3);
+  border-color: rgba(23, 92, 255, 0.3);
   background: var(--accent-dim);
-  color: #aaa0ff;
+  color: var(--accent-dark);
 }
 
 .badge.private {

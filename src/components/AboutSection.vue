@@ -61,6 +61,7 @@ const stack = [
 <style scoped>
 .about-section {
   position: relative;
+  background: rgba(255, 255, 255, 0.48);
 }
 
 .about-grid {
@@ -83,15 +84,16 @@ const stack = [
 
 .about-text p {
   color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.78;
+  font-size: 16px;
+  line-height: 1.72;
 }
 
 .process-block {
   overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 15px;
+  border: 1px solid var(--text);
+  border-radius: 24px;
   background: var(--bg-card);
+  box-shadow: 9px 9px 0 var(--accent-dim);
 }
 
 .process-label,
@@ -106,6 +108,8 @@ const stack = [
 .process-label {
   padding: 20px 22px;
   border-bottom: 1px solid var(--border);
+  background: var(--accent);
+  color: #fff;
 }
 
 .process-list {
@@ -116,7 +120,7 @@ const stack = [
   display: grid;
   grid-template-columns: 34px 1fr;
   gap: 12px;
-  padding: 20px 22px;
+  padding: 24px 22px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -125,7 +129,13 @@ const stack = [
 }
 
 .process-list li > span {
-  color: var(--text-dim);
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  color: var(--accent);
   font-family: var(--mono);
   font-size: 10px;
 }
@@ -133,7 +143,7 @@ const stack = [
 .process-list h3 {
   margin-bottom: 5px;
   color: var(--text);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .process-list p {
@@ -148,7 +158,7 @@ const stack = [
   gap: 32px;
   align-items: center;
   margin-top: 70px;
-  padding: 22px 0;
+  padding: 26px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -163,8 +173,11 @@ const stack = [
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 7px 11px;
-  color: var(--text-muted);
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text);
   font-size: 11px;
 }
 
