@@ -2,17 +2,29 @@
   <nav class="nav" :class="{ scrolled }">
     <div class="container nav-inner">
       <span class="nav-logo">dr<span class="accent">.</span></span>
-      <ul class="nav-links">
-        <li><a href="#about">Обо мне</a></li>
-        <li><a href="#projects">Проекты</a></li>
-        <li><a href="#contact">Контакты</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#about">{{ t('nav.about') }}</a></li>
+          <li v-if="locale === 'en'"><a href="#services">{{ t('nav.services') }}</a></li>
+          <li><a href="#projects">{{ t('nav.projects') }}</a></li>
+          <li><a href="#contact">{{ t('nav.contact') }}</a></li>
+        </ul>
+        <div class="lang-switch">
+          <a :href="ruHref" :class="{ active: locale === 'ru' }">RU</a>
+          <span class="lang-sep">/</span>
+          <a :href="enHref" :class="{ active: locale === 'en' }">EN</a>
+        </div>
+      </div>
     </div>
   </nav>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { t, locale } from '../i18n.js'
+
+const ruHref = import.meta.env.BASE_URL
+const enHref = import.meta.env.BASE_URL + 'en/'
 
 const scrolled = ref(false)
 
@@ -60,6 +72,13 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   color: var(--accent);
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  min-width: 0;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -74,5 +93,45 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 .nav-links a:hover {
   color: var(--text);
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.lang-switch a {
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.lang-switch a:hover {
+  color: var(--text);
+}
+
+.lang-switch a.active {
+  color: var(--accent);
+}
+
+.lang-sep {
+  color: var(--text-dim);
+}
+
+@media (max-width: 640px) {
+  .nav-right {
+    gap: 16px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
 }
 </style>

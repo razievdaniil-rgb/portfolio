@@ -1,21 +1,27 @@
 <template>
   <section class="hero">
     <div class="container">
-      <p class="hero-greeting">Привет, я</p>
+      <p class="hero-greeting">{{ t('hero.greeting') }}</p>
       <h1 class="hero-name">Daniil Raziev</h1>
-      <p class="hero-role">Fullstack Developer <span class="sep">/</span> Bot Developer</p>
-      <p class="hero-desc">
-        Разрабатываю веб-приложения, Telegram Mini Apps и мобильные приложения.<br />
-        Люблю чистый код и продуманные интерфейсы.
-      </p>
+      <p class="hero-role">{{ t('hero.role1') }} <span class="sep">/</span> {{ t('hero.role2') }}</p>
+      <p class="hero-desc" v-html="t('hero.desc')" />
       <div class="hero-actions">
-        <a href="#projects" class="btn-primary">Посмотреть проекты</a>
-        <a href="#contact" class="btn-ghost">Связаться</a>
+        <a href="#projects" class="btn-primary">{{ t('hero.btnProjects') }}</a>
+        <a v-if="showFiverr" :href="FIVERR_URL" target="_blank" rel="noopener" class="btn-ghost">{{ t('hero.btnFiverr') }}</a>
+        <a v-else href="#contact" class="btn-ghost">{{ t('hero.btnContact') }}</a>
       </div>
     </div>
     <div class="hero-glow" />
   </section>
 </template>
+
+<script setup>
+import { t, locale } from '../i18n.js'
+
+const FIVERR_URL = '' // вставить, когда профиль будет опубликован
+
+const showFiverr = locale === 'en' && FIVERR_URL !== ''
+</script>
 
 <style scoped>
 .hero {

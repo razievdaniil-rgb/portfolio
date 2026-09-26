@@ -1,24 +1,18 @@
 <template>
   <section id="about" class="section">
     <div class="container">
-      <p class="section-label">// about</p>
-      <h2 class="section-title">Обо мне</h2>
+      <p class="section-label">{{ t('about.label') }}</p>
+      <h2 class="section-title">{{ t('about.title') }}</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p>
-            Я fullstack-разработчик, специализирующийся на веб-приложениях, Telegram Mini Apps и мобильной разработке.
-            Работаю с современным JS-стеком и люблю решать нетривиальные задачи.
-          </p>
-          <p>
-            В свободное время развиваю собственные проекты — от ботов до мобильных приложений.
-            Открыт к фрилансу и интересным коллаборациям.
-          </p>
+          <p>{{ t('about.p1') }}</p>
+          <p>{{ t('about.p2') }}</p>
         </div>
         <div class="stack-block">
-          <p class="stack-label">Стек технологий</p>
+          <p class="stack-label">{{ t('about.stackLabel') }}</p>
           <div class="stack-grid">
             <span v-for="tech in stack" :key="tech.name" class="stack-badge">
-              <span class="stack-icon">{{ tech.icon }}</span>
+              <span class="stack-icon" v-html="tech.icon" />
               {{ tech.name }}
             </span>
           </div>
@@ -29,15 +23,26 @@
 </template>
 
 <script setup>
+import { t } from '../i18n.js'
+import jsIcon from '../assets/icons/javascript.svg?raw'
+import vueIcon from '../assets/icons/vuedotjs.svg?raw'
+import reactIcon from '../assets/icons/react.svg?raw'
+import nodeIcon from '../assets/icons/nodedotjs.svg?raw'
+import htmlIcon from '../assets/icons/html5.svg?raw'
+import cssIcon from '../assets/icons/css.svg?raw'
+import telegramIcon from '../assets/icons/telegram.svg?raw'
+import pythonIcon from '../assets/icons/python.svg?raw'
+
 const stack = [
-  { name: 'JavaScript', icon: '⚡' },
-  { name: 'Vue.js', icon: '💚' },
-  { name: 'React', icon: '⚛️' },
-  { name: 'React Native', icon: '📱' },
-  { name: 'Node.js', icon: '🟢' },
-  { name: 'HTML / CSS', icon: '🎨' },
-  { name: 'grammY', icon: '🤖' },
-  { name: 'aiogram', icon: '🐍' },
+  { name: 'JavaScript', icon: jsIcon },
+  { name: 'Vue.js', icon: vueIcon },
+  { name: 'React', icon: reactIcon },
+  { name: 'React Native', icon: reactIcon },
+  { name: 'Node.js', icon: nodeIcon },
+  { name: 'HTML', icon: htmlIcon },
+  { name: 'CSS', icon: cssIcon },
+  { name: 'grammY', icon: telegramIcon },
+  { name: 'aiogram', icon: pythonIcon },
 ]
 </script>
 
@@ -102,6 +107,14 @@ const stack = [
 }
 
 .stack-icon {
-  font-size: 14px;
+  display: inline-flex;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.stack-icon :deep(svg) {
+  width: 100%;
+  height: 100%;
 }
 </style>
