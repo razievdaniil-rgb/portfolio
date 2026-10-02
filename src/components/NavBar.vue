@@ -7,9 +7,9 @@
       </a>
       <div class="nav-right">
         <ul class="nav-links">
-          <li><a href="#about">{{ t('nav.about') }}</a></li>
-          <li v-if="locale === 'en'"><a href="#services">{{ t('nav.services') }}</a></li>
+          <li><a href="#services">{{ t('nav.services') }}</a></li>
           <li><a href="#projects">{{ t('nav.projects') }}</a></li>
+          <li><a href="#about">{{ t('nav.about') }}</a></li>
           <li><a href="#contact" class="nav-cta">{{ t('nav.contact') }}</a></li>
         </ul>
         <div class="lang-switch">
@@ -155,7 +155,8 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 @media (max-width: 640px) {
   .nav-logo small,
-  .nav-links li:first-child {
+  .nav-links li:first-child,
+  .nav-links li:nth-child(3) {
     display: none;
   }
 

@@ -15,8 +15,8 @@
           <div class="hero-bottom">
             <p class="hero-desc">{{ t('hero.desc') }}</p>
             <div class="hero-actions">
-              <a href="#projects" class="btn-primary">{{ t('hero.btnProjects') }} <span aria-hidden="true">↘</span></a>
-              <a href="#contact" class="btn-ghost">{{ t('hero.btnContact') }}</a>
+              <a href="#contact" class="btn-primary">{{ t('hero.btnContact') }} <span aria-hidden="true">↘</span></a>
+              <a href="#projects" class="btn-ghost">{{ t('hero.btnProjects') }}</a>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
         </aside>
       </div>
 
-      <div class="hero-stack"><span>CORE STACK</span><p>{{ t('hero.metaStack') }}</p></div>
+      <div class="hero-stack"><span>{{ t('hero.metaLabel') }}</span><p>{{ t('hero.metaStack') }}</p></div>
     </div>
   </section>
 </template>

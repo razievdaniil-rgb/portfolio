@@ -16,8 +16,8 @@ export const projects = [
       en: 'Redesigned and built a digital product for an industrial pump and valve supplier: catalog, model search, duty-point selection, AI assistant and specification handoff to an engineer.',
     },
     highlights: {
-      ru: ['Каталог промышленного оборудования', 'Подбор по Q–H', 'AI-помощник и заявки'],
-      en: ['Industrial equipment catalog', 'Q–H duty-point selection', 'AI assistant and lead flow'],
+      ru: ['Подбор оборудования без звонка', 'Каталог и расчёт в одном сценарии', 'Готовая спецификация уходит специалисту'],
+      en: ['Equipment selection without a call', 'Catalog and calculation in one flow', 'A ready specification reaches the specialist'],
     },
     stack: ['Product design', 'UI/UX', 'Frontend', 'AI'],
     link: 'https://rfzavod.com/',

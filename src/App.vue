@@ -2,15 +2,14 @@
   <NavBar />
   <main>
     <HeroSection />
-    <AboutSection />
-    <ServicesSection v-if="locale === 'en'" />
+    <ServicesSection />
     <ProjectsSection />
+    <AboutSection />
     <ContactSection />
   </main>
 </template>
 
 <script setup>
-import { locale } from './i18n.js'
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
