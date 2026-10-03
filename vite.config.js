@@ -12,6 +12,9 @@ export default defineConfig({
       input: {
         main: r('index.html'),
         en: r('en/index.html'),
+        webDevelopment: r('services/web-development/index.html'),
+        telegramMiniApp: r('services/telegram-mini-app/index.html'),
+        mobileMvp: r('services/mobile-mvp/index.html'),
       },
     },
   },

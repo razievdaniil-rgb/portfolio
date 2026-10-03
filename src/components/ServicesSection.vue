@@ -11,7 +11,13 @@
           <div class="service-main"><h3>{{ service.name }}</h3><p>{{ service.desc }}</p></div>
           <div class="service-result"><span>{{ t('services.resultLabel') }}</span><p>{{ service.result }}</p></div>
           <div class="service-includes"><span>{{ t('services.includesLabel') }}</span><ul><li v-for="feature in service.features" :key="feature">{{ feature }}</li></ul></div>
-          <footer class="service-footer"><small>{{ service.case }}</small><a href="#contact">{{ t('services.cta') }}</a></footer>
+          <footer class="service-footer">
+            <small>{{ service.case }}</small>
+            <div class="service-actions">
+              <a v-if="locale === 'ru'" :href="serviceHref(service.index)" class="service-more">Подробнее</a>
+              <a href="#contact">{{ t('services.cta') }}</a>
+            </div>
+          </footer>
         </article>
       </div>
       <div class="first-step">
@@ -24,7 +30,15 @@
 </template>
 
 <script setup>
-import { t } from '../i18n.js'
+import { t, locale } from '../i18n.js'
+
+const servicePages = {
+  '01': 'services/web-development/',
+  '02': 'services/telegram-mini-app/',
+  '03': 'services/mobile-mvp/',
+}
+
+const serviceHref = index => import.meta.env.BASE_URL + servicePages[index]
 </script>
 
 <style scoped>
@@ -40,4 +54,6 @@ import { t } from '../i18n.js'
     max-width: 680px;
   }
 }
+.service-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.service-footer .service-actions a{padding:0 12px}.service-footer .service-more{background:#fff}.service-card:nth-child(3) .service-footer .service-more{border-color:rgba(255,255,255,.5);background:transparent;color:#fff}.service-card:nth-child(3) .service-footer .service-more:hover{background:#fff;color:var(--accent)}
+@media(max-width:420px){.service-actions{grid-template-columns:1fr}}
 </style>
