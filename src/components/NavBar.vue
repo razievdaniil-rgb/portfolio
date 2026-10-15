@@ -8,7 +8,7 @@
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="#services">{{ t('nav.services') }}</a></li>
-          <li><a href="#projects">{{ t('nav.projects') }}</a></li>
+          <li><a :href="portfolioHref">{{ locale === 'ru' ? 'Портфолио' : 'Portfolio' }}</a></li>
           <li><a href="#about">{{ t('nav.about') }}</a></li>
           <li><a href="#contact" class="nav-cta">{{ t('nav.contact') }}</a></li>
         </ul>
@@ -28,6 +28,7 @@ import { t, locale } from '../i18n.js'
 
 const ruHref = import.meta.env.BASE_URL
 const enHref = import.meta.env.BASE_URL + 'en/'
+const portfolioHref = import.meta.env.BASE_URL + (locale === 'en' ? 'en/' : '') + 'work/'
 
 const scrolled = ref(false)
 

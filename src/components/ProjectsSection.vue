@@ -26,6 +26,7 @@
             <span class="badge" :class="featured.badgeStyle">{{ featured.badge[locale] }}</span>
           </div>
           <h3>{{ featured.name[locale] }}</h3>
+          <a class="card-link" :href="caseHref(featured)">{{ locale === 'ru' ? 'Читать кейс →' : 'Read case →' }}</a>
           <p class="project-desc">{{ featured.description[locale] }}</p>
           <ul class="project-highlights">
             <li v-for="item in featured.highlights[locale]" :key="item">{{ item }}</li>
@@ -72,6 +73,7 @@
           </div>
 
           <div class="card-actions">
+            <a class="card-link" :href="caseHref(project)">{{ locale === 'ru' ? 'Читать кейс →' : 'Read case →' }}</a>
             <a v-if="project.link" :href="project.link" target="_blank" rel="noopener" class="card-link">
               {{ project.linkLabel?.[locale] || t('projects.open') }}
             </a>
@@ -81,6 +83,7 @@
           </div>
         </article>
       </div>
+      <a class="primary-link" :href="portfolioHref">{{ locale === 'ru' ? 'Всё портфолио →' : 'All projects →' }}</a>
     </div>
 
     <div v-if="gallery" class="lightbox" role="dialog" aria-modal="true" @click="closeGallery">
@@ -102,7 +105,9 @@ import telegramIcon from '../assets/icons/telegram.svg?raw'
 import mobileIcon from '../assets/icons/mobile.svg?raw'
 
 const featured = computed(() => projects.find(project => project.featured))
-const regularProjects = computed(() => projects.filter(project => !project.featured))
+const regularProjects = computed(() => projects.filter(project => !project.featured).slice(0, 1))
+const caseHref = project => import.meta.env.BASE_URL + (locale === 'en' ? 'en/' : '') + 'work/' + project.id + '/'
+const portfolioHref = import.meta.env.BASE_URL + (locale === 'en' ? 'en/' : '') + 'work/'
 const gallery = ref(null)
 const index = ref(0)
 

@@ -43,7 +43,7 @@ export const projects = [
     linkLabel: { ru: 'Смотреть в RuStore', en: 'View on RuStore' },
     badge: { ru: 'Опубликовано', en: 'Published' },
     badgeStyle: 'live',
-    shots: ['fitdiary-1.png', 'fitdiary-2.png', 'fitdiary-3.png'],
+    shots: ['fitdiary-1.png', 'fitdiary-2.png', 'fitdiary-3.png', 'fitdiary-program.png'],
   },
   {
     id: 'training-log',

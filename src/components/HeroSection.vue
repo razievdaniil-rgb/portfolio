@@ -16,7 +16,7 @@
             <p class="hero-desc">{{ t('hero.desc') }}</p>
             <div class="hero-actions">
               <a href="#contact" class="btn-primary">{{ t('hero.btnContact') }} <span aria-hidden="true">↘</span></a>
-              <a href="#projects" class="btn-ghost">{{ t('hero.btnProjects') }}</a>
+              <a :href="`${base}${locale === 'en' ? 'en/' : ''}work/`" class="btn-ghost">{{ t('hero.btnProjects') }}</a>
             </div>
           </div>
         </div>
@@ -53,6 +53,7 @@
 </template>
 
 <script setup>
+const base = import.meta.env.BASE_URL
 import { t } from '../i18n.js'
 const shotSrc = shot => import.meta.env.BASE_URL + 'shots/' + shot
 </script>
@@ -100,6 +101,6 @@ const shotSrc = shot => import.meta.env.BASE_URL + 'shots/' + shot
 @media(max-width:980px){.hero-grid{grid-template-columns:1fr}.hero-copy{max-width:820px}.hero-proof{width:min(100%,700px)}}
 @media(min-width:981px) and (max-height:820px){.hero{padding-top:88px;padding-bottom:18px}.hero-grid{padding:20px 0 16px}.hero-title{font-size:clamp(48px,4.7vw,70px)}.hero-title span{margin:5px 0 6px;padding-bottom:7px}.hero-bottom{margin-top:18px}.hero-desc{font-size:14px}.proof-window img{height:220px}.proof-caption{padding:16px 20px}.proof-row{margin-top:10px}.proof-mini{min-height:68px}.hero-stack{padding-top:12px}}
 @media(max-width:620px){.hero{padding-top:100px}.hero-title{font-size:clamp(49px,15vw,72px)}.hero-bottom{grid-template-columns:1fr}.hero-actions{grid-template-columns:1fr 1fr}.btn-primary{min-width:0}.proof-window img{height:235px}.proof-row{grid-template-columns:1fr}.hero-stack{align-items:flex-start;flex-direction:column;gap:7px}.proof-main{box-shadow:7px 7px 0 var(--accent)}}
-@media(max-width:420px){.hero-actions{grid-template-columns:1fr}.hero-title span{margin-left:-4px}.proof-caption{padding:18px}}
+@media(max-width:420px){.hero-grid{grid-template-columns:minmax(0,1fr)}.hero-copy,.hero-proof{min-width:0}.hero-actions{grid-template-columns:1fr}.hero-title{font-size:clamp(40px,12.5vw,52px);overflow-wrap:anywhere}.hero-title span{max-width:100%;margin-left:0}.proof-caption{padding:18px}}
 @media(prefers-reduced-motion:reduce){.proof-main,.proof-mini,.btn-primary,.btn-ghost{transition:none}}
 </style>
