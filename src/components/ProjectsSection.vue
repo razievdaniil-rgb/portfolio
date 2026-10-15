@@ -9,41 +9,8 @@
         <p class="section-intro">{{ t('projects.intro') }}</p>
       </div>
 
-      <article v-if="featured" class="featured-project">
-        <button
-          class="featured-visual"
-          type="button"
-          :aria-label="t('projects.viewShots')"
-          @click="openGallery(featured)"
-        >
-          <img :src="shotSrc(featured.shots[0])" :alt="featured.name[locale]" />
-          <span class="visual-hint">{{ t('projects.viewCase') }}</span>
-        </button>
-
-        <div class="featured-copy">
-          <div class="project-meta">
-            <span>{{ featured.eyebrow[locale] }}</span>
-            <span class="badge" :class="featured.badgeStyle">{{ featured.badge[locale] }}</span>
-          </div>
-          <h3>{{ featured.name[locale] }}</h3>
-          <a class="card-link" :href="caseHref(featured)">{{ locale === 'ru' ? 'Читать кейс →' : 'Read case →' }}</a>
-          <p class="project-desc">{{ featured.description[locale] }}</p>
-          <ul class="project-highlights">
-            <li v-for="item in featured.highlights[locale]" :key="item">{{ item }}</li>
-          </ul>
-          <div class="project-footer">
-            <div class="card-stack">
-              <span v-for="tech in featured.stack" :key="tech" class="tech-tag">{{ tech }}</span>
-            </div>
-            <a :href="featured.link" target="_blank" rel="noopener" class="primary-link">
-              {{ featured.linkLabel[locale] }} <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </div>
-      </article>
-
       <div class="projects-grid">
-        <article v-for="project in regularProjects" :key="project.id" class="project-card">
+        <article v-for="project in selectedProjects" :key="project.id" class="project-card" :class="{ 'mobile-project': project.category === 'mobile' }">
           <button
             v-if="project.shots"
             class="card-preview"
@@ -66,7 +33,7 @@
               </span>
             </div>
             <h3 class="card-name">{{ project.name[locale] }}</h3>
-            <p class="card-desc">{{ project.description[locale] }}</p>
+            <p class="card-desc">{{ summaries[project.id][locale] }}</p>
             <div class="card-stack">
               <span v-for="tech in project.stack" :key="tech" class="tech-tag">{{ tech }}</span>
             </div>
@@ -74,16 +41,10 @@
 
           <div class="card-actions">
             <a class="card-link" :href="caseHref(project)">{{ locale === 'ru' ? 'Читать кейс →' : 'Read case →' }}</a>
-            <a v-if="project.link" :href="project.link" target="_blank" rel="noopener" class="card-link">
-              {{ project.linkLabel?.[locale] || t('projects.open') }}
-            </a>
-            <button v-if="project.shots" class="card-link text-button" type="button" @click="openGallery(project)">
-              {{ t('projects.viewShots') }}
-            </button>
           </div>
         </article>
       </div>
-      <a class="primary-link" :href="portfolioHref">{{ locale === 'ru' ? 'Всё портфолио →' : 'All projects →' }}</a>
+      <div class="more-projects"><a class="primary-link" :href="portfolioHref">{{ locale === 'ru' ? 'Посмотреть ещё проекты →' : 'View more projects →' }}</a></div>
     </div>
 
     <div v-if="gallery" class="lightbox" role="dialog" aria-modal="true" @click="closeGallery">
@@ -104,8 +65,11 @@ import globeIcon from '../assets/icons/globe.svg?raw'
 import telegramIcon from '../assets/icons/telegram.svg?raw'
 import mobileIcon from '../assets/icons/mobile.svg?raw'
 
-const featured = computed(() => projects.find(project => project.featured))
-const regularProjects = computed(() => projects.filter(project => !project.featured).slice(0, 1))
+const selectedProjects = computed(() => ['rfzavod', 'fitdiary'].map(id => projects.find(project => project.id === id)).filter(Boolean))
+const summaries = {
+  rfzavod: { ru: 'Промышленный каталог с поиском моделей, инженерным подбором и передачей спецификации специалисту.', en: 'An industrial catalog with model search, duty-point selection and specification handoff.' },
+  fitdiary: { ru: 'Мобильный дневник силовых тренировок: программы, расчёт рабочих весов и сохранение подходов.', en: 'A strength training app with programs, working-weight calculation and persistent workout logging.' },
+}
 const caseHref = project => import.meta.env.BASE_URL + (locale === 'en' ? 'en/' : '') + 'work/' + project.id + '/'
 const portfolioHref = import.meta.env.BASE_URL + (locale === 'en' ? 'en/' : '') + 'work/'
 const gallery = ref(null)
@@ -152,6 +116,10 @@ onUnmounted(() => {
 .projects-section {
   overflow: hidden;
 }
+
+.more-projects { display: flex; justify-content: center; margin-top: 32px; }
+.more-projects .primary-link { width: auto; }
+.mobile-project .card-preview img { object-fit: contain; }
 
 .section-heading {
   display: grid;

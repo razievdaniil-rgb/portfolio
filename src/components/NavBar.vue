@@ -63,6 +63,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
 }
 
 .nav-logo {
@@ -70,6 +71,8 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   align-items: center;
   gap: 11px;
   color: var(--text);
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .nav-logo > span {
@@ -95,15 +98,22 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   align-items: center;
   gap: 28px;
   min-width: 0;
+  flex-shrink: 0;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 32px;
+  align-items: center;
 }
 
+.nav-links li { flex-shrink: 0; }
+
 .nav-links a {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
   font-size: 13px;
   font-weight: 600;
   color: var(--text-muted);
@@ -154,7 +164,13 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   color: var(--text-dim);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1100px) {
+  .nav-logo small { display: none; }
+  .nav-right { gap: 20px; }
+  .nav-links { gap: 22px; }
+}
+
+@media (max-width: 740px) {
   .nav-logo small,
   .nav-links li:first-child,
   .nav-links li:nth-child(3) {
@@ -172,5 +188,14 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   .nav-links a {
     font-size: 13px;
   }
+}
+
+@media (max-width: 380px) {
+  .nav-inner { padding-inline: 16px; gap: 8px; }
+  .nav-right { gap: 8px; }
+  .nav-links { gap: 8px; }
+  .nav-links a { font-size: 12px; }
+  .nav-links .nav-cta { padding: 9px 10px; }
+  .lang-switch { gap: 3px; font-size: 10px; }
 }
 </style>
