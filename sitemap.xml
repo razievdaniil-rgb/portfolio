@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://razievdaniil-rgb.github.io/portfolio/</loc>
+    <loc>https://razievcode.ru/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://razievdaniil-rgb.github.io/portfolio/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://razievdaniil-rgb.github.io/portfolio/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://razievdaniil-rgb.github.io/portfolio/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://razievcode.ru/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://razievcode.ru/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://razievcode.ru/" />
   </url>
   <url>
-    <loc>https://razievdaniil-rgb.github.io/portfolio/en/</loc>
+    <loc>https://razievcode.ru/en/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://razievdaniil-rgb.github.io/portfolio/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://razievdaniil-rgb.github.io/portfolio/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://razievdaniil-rgb.github.io/portfolio/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://razievcode.ru/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://razievcode.ru/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://razievcode.ru/" />
   </url>
   <url>
-    <loc>https://razievdaniil-rgb.github.io/portfolio/services/web-development/</loc>
+    <loc>https://razievcode.ru/services/web-development/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://razievdaniil-rgb.github.io/portfolio/services/telegram-mini-app/</loc>
+    <loc>https://razievcode.ru/services/telegram-mini-app/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://razievdaniil-rgb.github.io/portfolio/services/mobile-mvp/</loc>
+    <loc>https://razievcode.ru/services/mobile-mvp/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/work/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/work/rfzavod/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/work/fitdiary/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/work/training-log/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/work/learnjs/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/work/kinetik/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/work/torque/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/work/caravela/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/en/work/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/en/work/rfzavod/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/en/work/fitdiary/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/en/work/training-log/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/en/work/learnjs/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/en/work/kinetik/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/en/work/torque/</loc></url>
-  <url><loc>https://razievdaniil-rgb.github.io/portfolio/en/work/caravela/</loc></url>
+  <url><loc>https://razievcode.ru/work/</loc></url>
+  <url><loc>https://razievcode.ru/work/rfzavod/</loc></url>
+  <url><loc>https://razievcode.ru/work/fitdiary/</loc></url>
+  <url><loc>https://razievcode.ru/work/training-log/</loc></url>
+  <url><loc>https://razievcode.ru/work/learnjs/</loc></url>
+  <url><loc>https://razievcode.ru/work/kinetik/</loc></url>
+  <url><loc>https://razievcode.ru/work/torque/</loc></url>
+  <url><loc>https://razievcode.ru/work/caravela/</loc></url>
+  <url><loc>https://razievcode.ru/en/work/</loc></url>
+  <url><loc>https://razievcode.ru/en/work/rfzavod/</loc></url>
+  <url><loc>https://razievcode.ru/en/work/fitdiary/</loc></url>
+  <url><loc>https://razievcode.ru/en/work/training-log/</loc></url>
+  <url><loc>https://razievcode.ru/en/work/learnjs/</loc></url>
+  <url><loc>https://razievcode.ru/en/work/kinetik/</loc></url>
+  <url><loc>https://razievcode.ru/en/work/torque/</loc></url>
+  <url><loc>https://razievcode.ru/en/work/caravela/</loc></url>
 </urlset>

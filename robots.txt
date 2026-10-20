@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://razievdaniil-rgb.github.io/portfolio/sitemap.xml
+Sitemap: https://razievcode.ru/sitemap.xml
