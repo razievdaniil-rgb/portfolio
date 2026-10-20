@@ -2,6 +2,11 @@
   display: none;
 }
 
+/* Longer, descriptive SEO headings: scope limited to the three service pages. */
+.seo-service .hero h1 { font-size: clamp(38px, 4.2vw, 60px); line-height: 1.04; overflow-wrap: anywhere; }
+.seo-service .case-copy .button-secondary { display: inline-flex; margin: 14px 10px 14px 0; }
+.seo-service .hero-grid > * { min-width: 0; }
+
 /* На десктопе весь первый экран, включая CTA, помещается в viewport. */
 @media (min-width: 921px) {
   .hero {
