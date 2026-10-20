@@ -7,7 +7,7 @@ const r = (p) => fileURLToPath(new URL(p, import.meta.url))
 
 export default defineConfig({
   plugins: [vue()],
-  base: '/portfolio/',
+  base: '/',
   build: {
     rollupOptions: {
       input: {

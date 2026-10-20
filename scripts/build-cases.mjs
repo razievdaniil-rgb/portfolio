@@ -2,8 +2,8 @@ import { mkdir, writeFile, readFile } from 'node:fs/promises'
 import { projects } from '../src/data/projects.js'
 import { enrichCase } from './seo-cases.mjs'
 
-const base = '/portfolio/'
-const origin = 'https://razievdaniil-rgb.github.io'
+const base = '/'
+const origin = 'https://razievcode.ru'
 const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))
 const details = {
   rfzavod: ['Помочь покупателю перейти от модели оборудования к спецификации для специалиста.', 'Поиск модели → подбор по рабочей точке → спецификация.', 'Каталог, инженерный подбор, AI-помощник и передача спецификации.'],

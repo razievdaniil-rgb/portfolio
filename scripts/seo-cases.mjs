@@ -1,5 +1,5 @@
-const base = '/portfolio/'
-const origin = 'https://razievdaniil-rgb.github.io'
+const base = '/'
+const origin = 'https://razievcode.ru'
 const cases = {
   rfzavod: {
     service: 'web-development', label: 'Разработка сайтов и веб-приложений',
